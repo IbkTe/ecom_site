@@ -15,7 +15,7 @@
     outline: none;
     border: none;
     text-transform: capitalize;
-    transition: 2s linear;
+    transition: 1s linear;
 }
 
 html{
@@ -40,7 +40,46 @@ html::-webkit-scrollbar-thumb{
 
 body{
     background-color: #eee;
-    height: 200rem;
+}
+
+body.active{
+    --white: #111;
+    --black: #fff;
+    --light-color: rgba(255,255,255,.3);
+    background: #222;
+}
+section{
+    padding: 1rem 9%;
+}
+
+.heading{
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-bottom: .1rem solid var(--light-color);
+    font-size: 3rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.heading span{
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1.8rem;
+    padding: .9rem 3.5rem; 
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: var(--orange);
+    color: var(--white);
 }
 
 header{
@@ -124,6 +163,256 @@ header.active{
     z-index: 100;
 }
 
+.navbar{
+    position: fixed;
+    top: 0;
+    left: -120%;
+    height: 100%;
+    background-color: var(--white);
+    padding: 3rem;
+    width: 30rem;
+}
+
+.navbar.active{
+    left: 0;
+    box-shadow: 0 0 0 100vw var(--light-color);
+}
+
+.navbar .user{
+    text-align: center;
+    margin: 3rem auto;
+}
+
+.navbar .user img{
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    border: .5rem solid var(--white);
+    object-fit: cover;
+    box-shadow: 5rem 2rem 0 -3rem var(--orange), -5rem -2rem 0 -3rem var(--orange);
+}
+.navbar .user h3{
+    padding-top: .5rem;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.navbar .links a{
+    display: block;
+    border-bottom: .1rem solid var(--light-color);
+    font-size: 2rem;
+    padding: 1.5rem 0;
+    color: var(--black);
+}
+
+.navbar .links a:last-child{
+    border: none;
+}
+
+.navbar .links a:hover{
+    letter-spacing: .2rem;
+    color: var(--orange);
+}
+
+.navbar #close{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.navbar #close:hover{
+    color: var(--orange);
+}
+
+.home{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+}
+
+.home .content{
+    flex: 1 1 40rem;
+    text-align: center;
+}
+
+.home .image{
+    flex: 1 1 40rem;
+}
+
+.home .image img{
+    width: 30vw;
+}
+
+.home .content span{
+    color: var(--orange);
+    font-size: 3rem;
+}
+
+.home .content h3{
+    color: var(--black);
+    font-size: 8rem;
+    text-transform: uppercase ;
+}
+
+.category .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;    
+}
+.category .box-container .box{
+    height: 30rem;
+    flex: 1 1 40rem;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.category .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.category .box-container .box:hover img{
+    transform: scale(1.1);
+}    
+
+.category .box-container .content{
+    position: absolute;
+    bottom: 7rem;
+    left: 2rem;
+}
+
+.category .box-container .content span{
+    font-size: 2rem;
+    color: var(--orange);
+}
+
+.category .box-container .content h3{
+    font-size: 3rem;
+    color: #3337;  
+    text-transform: uppercase;
+    padding-top: .5rem;
+}
+
+.products .product-slider .slide{
+    overflow: hidden;
+    position: relative;
+    border: .1rem solid var(--light-color);
+    border-radius: .5rem;
+    background: var(--white);
+}
+
+.products .product-slider .slide .image{
+    padding: 1rem;
+}
+
+.products .product-slider .slide .image img{
+    height: 50rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.products .product-slider .slide .content{
+    padding: 2rem;
+    border-top: .1rem solid var(--light-color);
+}
+
+.products .product-slider .slide .icons{
+    position: absolute;
+    top: 0;
+    right: -7rem;
+}
+
+.products .product-slider .slide:hover .icons{
+    right: 7rem;
+}
+
+
+.products .product-slider .slide .icons a{
+    height: 5rem;
+    line-height: 5rem;
+    width: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--white);
+    margin-top: 1rem;
+    display: block;
+}
+
+.products .product-slider .slide .icons a:hover{
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.products .product-slider .slide .content .stars i{
+    font-size: 2rem;
+    color: var(--orange);
+}
+
+.products .product-slider .slide .content .stars span{
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: 300;
+}
+
+.products .product-slider .slide .content h3{
+    columns: var(--black);
+    font-weight: normal;
+    font-size: 2.55rem;
+    padding: .5rem 0;
+}
+
+.products .product-slider .slide .content .price{
+    columns: var(--orange );
+    font-weight: bolder;
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+
+.products .product-slider .slide .content .price span{
+    columns: var(--black );
+    font-weight: normal;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+
+
+
+
+
+
+
+
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -145,6 +434,14 @@ header.active{
     header{
         padding: 1.5rem;
     }
+
+    section{
+        padding: 1.5rem;
+    }
+
+    .home .content h3{
+        font-size: 5rem;
+    }
         
 }
 
@@ -161,12 +458,26 @@ header.active{
     .header.active{
         transform: translateY(-12.5rem);
     }
+
+    .home .content h3{
+        text-align: center;
+    }
+
+    .home .image img{
+        width: 100%;
+    }
 }
 
 
 @media(max-width:450px) {
     html{
         font-size: 50%;
+    }
+
+    .heading{
+        text-align: center;
+        font-size: 2.5rem;
+        border-bottom: none;
     }
         
 }
