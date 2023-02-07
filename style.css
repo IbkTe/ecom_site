@@ -608,7 +608,7 @@ header.active{
 .footer .footer-container .box-container .box a{
     display: block;
     color: var(--black);
-    font-size: 1.7rem 0;
+    font-size: 1.7rem;
     padding: 1rem 0;
     font-weight: 300;
 }
